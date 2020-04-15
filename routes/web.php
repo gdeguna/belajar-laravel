@@ -24,3 +24,16 @@ Route::get('halo', function () {
 Route::get('about', function () {
 	return view('about');
 });
+
+Route::get('guru', 'GuruController@index');
+
+Route::get('/karyawan/{nama}', 'KaryawanController@index');
+
+// formulir
+Route::get('/formulir', 'KaryawanController@formulir');
+Route::post('/formulir/proses', 'KaryawanController@proses');
+
+// route blog
+Route::get('/blog', 'BlogController@home');
+Route::get('/blog/tentang', 'BlogController@tentang');
+Route::get('/blog/kontak', 'BlogController@kontak');
